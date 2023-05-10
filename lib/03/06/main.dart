@@ -55,9 +55,7 @@ class LoopLayout extends StatelessWidget {
         // 如果想控制占据宽度的比例，实现1:2:3，按如下代码使用
         Expanded(
           flex: 1,
-          child: ColoredBox(
-            color: Colors.red,
-          ),
+          child: left != null ? left! : ColoredBox(color: Colors.red, child: decoratedBox,),
         ),
         Expanded(
           flex: 4,
@@ -65,10 +63,7 @@ class LoopLayout extends StatelessWidget {
         ),
         Expanded(
           flex: 1,
-          child: ColoredBox(
-            color: Colors.blue,
-            child: decoratedBox,
-          ),
+          child: ColoredBox(color: Colors.blue, child: decoratedBox),
         ),
       ],
     );
